@@ -16,12 +16,17 @@ def jouer(screen):
     carte = creer_map()
     
     bas = pygame.image.load('image/bas.png').convert()
+    bas.set_colorkey((255,255,255))
     recharge = pygame.image.load('image/recharge.png').convert()
+    recharge.set_colorkey((255,255,255))
     tirer = pygame.image.load('image/tire.png').convert()
+    tirer.set_colorkey((255,255,255))
     toucher = pygame.image.load('image/touche.png').convert()
+    toucher.set_colorkey((255,255,255))
     coeur = pygame.image.load('image/coeur.png').convert()
     vide = pygame.image.load('image/coeurBriser.png').convert()
     ammo = pygame.image.load('image/ammo.png').convert()
+    sable = pygame.image.load('image/sable.png').convert()
 
     pygame.mixer.music.load("song/musique.mp3")
     pygame.mixer.music.queue("song/musique.mp3")
@@ -78,7 +83,7 @@ def jouer(screen):
             j2tick = controles(K_u, K_o, K_i, K_j, K_l, K_k, K_p, K_RETURN, joueur2, j2tick, carte, event, joueur1, feu, rech, ouch, charg)
 
 
-        refresh(screen, carte, joueur1, joueur2,coeur, vide, ammo)
+        refresh(screen, carte, joueur1, joueur2, coeur, vide, ammo, sable)
                                  
 
 

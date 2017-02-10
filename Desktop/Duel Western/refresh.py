@@ -4,17 +4,20 @@ from constantes import *
 
 
 
-def refresh(screen, carte, joueur1, joueur2,coeur, vide, ammo):
+def refresh(screen, carte, joueur1, joueur2,coeur, vide, ammo, sable):
 
     screen.fill((255,255,255))
 
     for i in range (nb_case_longueur):
         for j in range (nb_case_hauteur):
-
+            
+            screen.blit(sable, (i*taille_case, j*taille_case))
             if carte[i][j] == 1 :
               screen.blit(joueur1.get_sprite(), (i*taille_case, j*taille_case))
             elif carte[i][j] == 2 :
                 screen.blit(joueur2.get_sprite(), (i*taille_case, j*taille_case))
+
+            
                 
     for i in range (joueur1.get_vie()):
 
